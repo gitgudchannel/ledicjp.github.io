@@ -1,3 +1,12 @@
-<div class="container">
-  <canvas #canvas (window:resize)="onResize($event)"></canvas>
+<div class="container-float">
+  <canvas #canvas (mousemove)="onMouseMove($event)" (window:resize)="onResize($event)"></canvas>
+  <div class="container-float">
+    <div id="info" class="card card-outline-danger mx-auto" style="user-select: none; cursor: default; border-color:rgba(1,1,1,0)">
+      <p class="display-4">Josip Ledić</p>
+      <img class="rounded-circle border" src="/assets/textures/400x400.jpg" width="250px" style="margin-bottom: 12px; opacity: 0.6" />
+      <p class="lead">Full Stack Software Engineer</p>
+      <p class="lead">contact@josip.me</p>
+    </div>
+  </div>
+
 </div>

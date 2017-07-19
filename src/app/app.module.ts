@@ -1,3 +1,4 @@
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { ParticlesHeaderComponent } from './particles-header/particles-header.co
     ParticlesHeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
