@@ -1,0 +1,130 @@
+/* You can add global styles to this file, and also import other style files */
+// Import Google Font - Raleway 300 & 700
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+// Fonts
+$sans-serif: 'Raleway',
+sans-serif;
+$font-light: 300;
+$font-bold: 700;
+// Colors
+$black: #212121;
+$alpha-black: rgba(30,30,30,0.7);
+$gray: #303030;
+$medium-gray: #424242;
+$light-gray: #c4c4c4;
+$white: #FFFFFF;
+$disabled-white: rgba(255,
+  255,
+  255,
+  .5);
+$orange: #f96855;
+// Semantic color names
+$accent: $orange;
+$body-background: $gray;
+$menu-background: $black;
+$main-font-color: $light-gray;
+$menu-active-color: $light-gray;
+$menu-font-color: $medium-gray;
+$link-color: $accent;
+// ===================
+// General styles
+// ===================
+* {
+  box-sizing: border-box;
+}
+
+app-root {
+  color: $main-font-color;
+  font-family: $sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// ===================
+// Navigation
+// ===================
+app-nav {
+  background: $alpha-black;
+  border: 1px $disabled-white solid;
+  flex: 1 1 20%;
+  padding: 1em;
+}
+
+.logo {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  @media (min-width: 1500px) {
+    margin-bottom: 5em;
+  }
+  span {
+    font-weight: $font-bold;
+  }
+}
+
+.nav-item {
+  color: $menu-font-color;
+  text-decoration: none;
+  font-size: 1.7rem;
+  display: inline-block;
+  margin-right: 2em;
+  @media (min-width: 1500px) {
+    display: block;
+    margin: 12vh 0;
+  }
+  &.active {
+    color: $menu-active-color;
+  }
+}
+
+// ===================
+// Main Content area
+// ===================
+.main-content {
+  background-color: rgba(44,44,126,0.2);
+  padding: 1em;
+  flex: 1 1 80%;
+}
+
+
+body {
+  height: 100%;
+  margin: 2em;
+  background: #111111;
+}
+html {
+  height: 80%;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  background: #111111;
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+  transition: opacity .8s ease, transform 1.4s ease
+}
+
+// ===================
+// Portfolio
+// ===================
+.portfolio {
+  background: $menu-background;
+  flex: 1 1 80%;
+  min-width: 520px;
+  padding: 5em;
+}
