@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges,
+  ViewChild
+} from '@angular/core';
 declare var particlesJS: any;
 
 @Component({
@@ -6,19 +9,25 @@ declare var particlesJS: any;
   templateUrl: './particles.component.html',
   styleUrls: ['./particles.component.scss']
 })
-export class ParticlesComponent implements OnInit {
+export class ParticlesComponent implements OnInit, AfterViewInit {
+
+  loaded = false;
 
   constructor() {
+  }
+
+  ngAfterViewInit() {
+    this.loaded = true;
   }
 
   ngOnInit() {
     particlesJS('particles-js', {
         'particles': {
           'number': {
-            'value': 100,
+            'value': 50,
             'density': {
               'enable': true,
-              'value_area':1000
+              'value_area': 500
             }
           },
           'color': {
@@ -41,7 +50,7 @@ export class ParticlesComponent implements OnInit {
             }
           },
           'opacity': {
-            'value': 0.6,
+            'value': 0.7,
             'random': false,
             'anim': {
               'enable': false,
@@ -55,14 +64,14 @@ export class ParticlesComponent implements OnInit {
             'random': true,
             'anim': {
               'enable': false,
-              'speed': 40,
+              'speed': 60,
               'size_min': 0.1,
               'sync': false
             }
           },
           'line_linked': {
             'enable': true,
-            'distance': 120,
+            'distance': 80,
             'color': '#ffffff',
             'opacity': 0.4,
             'width': 1
@@ -76,13 +85,14 @@ export class ParticlesComponent implements OnInit {
               'mode': 'grab'
             },
             'onclick': {
-              'enable': false
+              'enable': true,
+              'mode': 'push'
             },
             'resize': true
           },
           'modes': {
             'grab': {
-              'distance': 140,
+              'distance': 200,
               'line_linked': {
                 'opacity': 1
               }
