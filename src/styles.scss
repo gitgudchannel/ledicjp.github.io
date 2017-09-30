@@ -49,14 +49,17 @@ app-root {
 app-nav {
   background: $alpha-black;
   border: 1px $disabled-white solid;
-  flex: 1 1 20%;
+  flex: 1 1 10%;
   padding: 1em;
+  @media (min-width: 1500px) {
+    min-height: 98vh;
+  }
 }
 
 .logo {
   text-transform: uppercase;
   margin-bottom: 1em;
-  @media (min-width: 1500px) {
+  @media (min-width: 1800px) {
     margin-bottom: 5em;
   }
   span {
@@ -67,12 +70,15 @@ app-nav {
 .nav-item {
   color: $menu-font-color;
   text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: 2em;
+  margin-right: 1em;
   @media (min-width: 1500px) {
     display: block;
     margin: 12vh 0;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 1.1rem;
   }
   &.active {
     color: $menu-active-color;
@@ -88,10 +94,28 @@ app-nav {
   flex: 1 1 80%;
 }
 
+app-portfolio, app-bio, app-home, app-contact {
+  background-color: rgba(44,44,126,0.2);
+  padding: 1em;
+  flex: 1 1 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  align-items: center;
+  justify-items: center;
+  @media (min-width: 15em) {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+}
+
+.content-item {
+
+}
+
 
 body {
   height: 100%;
-  margin: 2em;
+  margin: 1em;
   background: #111111;
 }
 html {
@@ -117,14 +141,4 @@ html {
   opacity: 1;
   -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
   transition: opacity .8s ease, transform 1.4s ease
-}
-
-// ===================
-// Portfolio
-// ===================
-.portfolio {
-  background: $menu-background;
-  flex: 1 1 80%;
-  min-width: 520px;
-  padding: 5em;
 }
