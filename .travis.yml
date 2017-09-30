@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 branches:
   only:
@@ -9,6 +9,10 @@ branches:
 cache:
   directories:
     - node_modules
+
+before_script:
+  - git config --global user.email "ledicjp@gmail.com"
+  - git config --global user.name "Josip Ledic"
 
 script:
   - npm run build.prod
